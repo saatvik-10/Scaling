@@ -1,0 +1,10 @@
+#!/bin/bash
+cd ~/Scaling/asg
+npm install -g pm2
+export PATH=$PATH:/home/ubuntu/.nvm/versions/node/v22.21.0/bin/
+cd Scaling/asg
+git pull
+bun install
+pm2 start --interpreter /home/ubuntu/.nvm/versions/node/v22.21.0/bin/bun bin.ts
+
+## CAN ADD A POLICY TO SCALE SERVERS TO 0 AND THEN INCREASE SO THAT NEW AS WELL AS OLD MACHINES GET THE ACCESS TO THE LATEST PUSH!!!
